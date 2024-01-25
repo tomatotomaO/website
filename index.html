@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 웹사이트</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            font-size: 50px;
+        }
+
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            transition: background-color 0.5s ease
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: rgb(230, 230, 230);
+            text-align: center;
+            padding: 20px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: rgb(230, 230, 230);
+            color:#4CAF50;
+        }
+
+        .navbar a.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .navbar .icon {
+            display: none;
+            color: rgb(230, 230, 230);
+        }
+
+        @media screen and (max-width: 900px) {
+            .navbar {
+              background-color:rgba(255,255,255,0);
+              transition: background-color 0.5s ease;
+            }
+            .navbar div.options{
+              display: none;
+            }
+            .navbar a.active {
+              display: block;
+              background-color:rgba(255,255,255,0);
+            color: #4CAF50;
+            font-size: 30px;
+            text-align: left;
+            transition: background-color 0.5s ease, color 0.5s ease;
+            
+        }
+
+            .navbar a.icon {
+                display: block;
+                float: right;
+                font-size: 30px;
+                font-weight: lighter;
+                transition: background-color 0.5s ease, color 0.5s ease;
+            }
+
+
+
+        }
+
+        @media screen and (max-width: 900px) {
+            .navbar.responsive a.icon {
+                position: absolute;
+                right: 0;
+                top: 0;
+                font-size: 30px;
+                color: #4CAF50;
+                transition: background-color 0.5s ease, color 0.5s ease;
+            }
+            .navbar.responsive div.options {
+                float: none;
+                display: flex;
+                text-align:right;
+                font-size: 20px;
+                padding-top: 80px;
+                padding-bottom: 30px;
+                justify-content: flex-end;
+                flex-direction: column;
+                align-items: flex-end;
+                
+                
+            }
+
+            .navbar.responsive div.options a{
+              transition: background-color 0.5s ease, color 0.5s ease;
+              display: inline-block;
+              width: 75px;
+              
+
+
+            }
+            .navbar.responsive div.options a:hover {
+            background-color: rgba(255,255,255,0);
+            color:greenyellow;
+        }
+
+        .navbar.responsive {
+            position: relative;
+        }
+
+        .navbar.responsive a.active {
+            font-size: 30px;
+        }
+
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+<div class="navbar" id="myNavbar">
+    <a href="#logo" class="active">Logo</a>
+    <div class="options">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <a href="#faq">FAQ</a>
+  </div>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">menu</a>
+</div>
+
+<script>
+    function myFunction() {
+        var x = document.getElementById("myNavbar");
+        if (x.className === "navbar") {
+            x.className += " responsive";
+        } else {
+            x.className = "navbar";
+        }
+    }
+</script>
+
+</body>
+</html>
